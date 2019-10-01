@@ -77,6 +77,8 @@ public class CarCostCalculation {
 		//these are all the calculations for the cost of the cars after the certain number of years
 		
 		
+		if (year5TCHC < year5TCRC) {System.out.print("After 5 years, the cost of the hybrid car is paid off.");}
+		else {System.out.print("After 5 years, the cost of the hybrid car has not paid off.");}
 		
 		
 		

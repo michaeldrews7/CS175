@@ -91,11 +91,11 @@ public class homework3 {
 		thirdNumber = in.nextInt();
 		
 		if (firstNumber == secondNumber && secondNumber == thirdNumber)
-			System.out.print("All the numbers are the same.");
+			System.out.println("All the numbers are the same.");
 		else if (firstNumber != secondNumber && secondNumber != thirdNumber && thirdNumber != firstNumber)
-			System.out.print("All the numbers are different.");
+			System.out.println("All the numbers are different.");
 		else
-			System.out.print("All the numbers are not the same");
+			System.out.println("All the numbers are not the same");
 		
 		System.out.println("------------------------------------------------------------------------------------------------------------------------");
 		//This is 5.5
@@ -114,11 +114,11 @@ public class homework3 {
 		c = in.nextInt();
 		
 		if ((a < b && b < c))
-			System.out.print("The numbers are in increasing order.");
+			System.out.println("The numbers are in increasing order.");
 		else if (a > b && b > c)
-			System.out.print("The numbers are in decreasing order.");
+			System.out.println("The numbers are in decreasing order.");
 		else
-			System.out.print("The numbers are neither increasing or decreasing.");
+			System.out.println("The numbers are neither increasing or decreasing.");
 		
 		System.out.println("------------------------------------------------------------------------------------------------------------------------");
 		//This is 5.6
@@ -142,24 +142,24 @@ public class homework3 {
 		
 		if (mode.equals("S")) {
 			if ((d < e && e < f))
-				System.out.print("The numbers are in increasing order.");
+				System.out.println("The numbers are in increasing order.");
 			else if (d > e && e > f)
-				System.out.print("The numbers are in decreasing order.");
+				System.out.println("The numbers are in decreasing order.");
 			else
-				System.out.print("The numbers are neither increasing or decreasing.");
+				System.out.println("The numbers are neither increasing or decreasing.");
 		}
 		else if (mode.equals("L")) {
 			if ((d < e && e < f) || (d < e && e == f) || (d == e && e < f))
-				System.out.print("The numbers are in increasing order.");
+				System.out.println("The numbers are in increasing order.");
 			else if ( (d > e && e > f) || (d > e && e == f) || (d == e && e > f))
-				System.out.print("The numbers are in decreasing order.");
+				System.out.println("The numbers are in decreasing order.");
 			else if (d == e && e == f)
-				System.out.print("The numbers are both increasing and decreasing.");
+				System.out.println("The numbers are both increasing and decreasing.");
 			else
-				System.out.print("The numbers are neither increasing or decreasing");
+				System.out.println("The numbers are neither increasing or decreasing");
 		}
 		else
-			System.out.print("You did not enter a valid mode");
+			System.out.println("You did not enter a valid mode");
 		
 		System.out.println("------------------------------------------------------------------------------------------------------------------------");
 		//This is 5.7
@@ -178,9 +178,9 @@ public class homework3 {
 		i = in.nextInt();
 		
 		if ((g > h && h > i) || (g < h && h < i) || (g == h && h < i) || (g == h && h > i) || (g > h && h == i) || (g < h && h == i))
-			System.out.print("The numbers are in order.");
+			System.out.println("The numbers are in order.");
 		else
-			System.out.print("The numbers are not in order.");
+			System.out.println("The numbers are not in order.");
 		
 		System.out.println("------------------------------------------------------------------------------------------------------------------------");
 		//This is 5.8
@@ -203,14 +203,106 @@ public class homework3 {
 		m = in.nextInt();
 		
 		if ((j == k && l == m) || (j == l && k == m) || (j == m && l == k))
-			System.out.print("Two pairs");
+			System.out.println("Two pairs");
 		else
-			System.out.print("Not two pairs");
+			System.out.println("Not two pairs");
 		
 		System.out.println("------------------------------------------------------------------------------------------------------------------------");
 		//This is 5.9
 		
+		int north = 0;
+		int northEast = 45;
+		int east = 90;
+		int southEast = 135;
+		int south = 180;
+		int southWest = 225;
+		int west = 270;
+		int northWest = 315;
+		int trueNorth = 360;
+		int numberDegrees;
+		
+		System.out.print("Please enter an angle in degrees: ");
+		numberDegrees = in.nextInt();
+		
+		if (numberDegrees > north && numberDegrees < northEast)
+			System.out.println("You are headed North");
+		if (numberDegrees > northEast && numberDegrees < east)
+			System.out.println("You are headed North-West");
+		if (numberDegrees > east && numberDegrees < southEast)
+			System.out.println("You are headed West");
+		if (numberDegrees > southEast && numberDegrees < south)
+			System.out.println("You are headed South West");
+		if (numberDegrees > south && numberDegrees < southWest)
+			System.out.println("You are headed South");
+		if (numberDegrees > southWest && numberDegrees < west)
+			System.out.println("You are headed South East");
+		if (numberDegrees > west && numberDegrees < northWest)
+			System.out.println("You are headed East");
+		if (numberDegrees > northWest && numberDegrees < trueNorth)
+			System.out.println("You are headed North East");
+		if (numberDegrees == trueNorth)
+			System.out.println("You are headed North");
+		System.out.println("------------------------------------------------------------------------------------------------------------------------");
+		//This is 5.10
+		
+		String name;
+		double salary;
+		double hours;
+		
+		System.out.print("Please enter the employee's name: ");
+		name = in.next();
+		
+		System.out.print("Please enter a hourly wage: ");
+		salary = in.nextDouble();
+		
+		System.out.print("Please enter the hours worked: ");
+		hours = in.nextDouble();
+		
+		double normal = hours * salary;
+		double overtime = (40 * salary) + ((hours-40) * salary * 1.5);
+		
+		
+		if (hours < 40)
+			System.out.println(name + " has worked " + hours + " hours this week for a weekly pay of $" + normal);
+		else 
+			System.out.println(name + " has worked " + hours + " hours this week for a weekly pay of $" + overtime);
+		
+		System.out.println("------------------------------------------------------------------------------------------------------------------------");
+		//This is 5.11
+		
+		String unit;
+		double temperature;
+		
+		System.out.print("Please enter either 'C' for Celsius or 'F' for Fahrenheit: ");
+		unit = in.next();
+		
+		System.out.print("Please enter a temperature value: ");
+		temperature = in.nextDouble();
+		
+		if (unit.equals("F")) {
+			if (temperature > 212.0)
+				System.out.print("Water will be a gas at sea level");
+			else if (temperature > 32.0)
+				System.out.print("Water will be a liquid at sea level");
+			else
+				System.out.print("Water will be a solid at sea level");
+		}
+		else if (unit.equals("C")) {
+			if (temperature > 100.0)
+				System.out.print("Water will be a gas at sea level");
+			else if (temperature > 0.0)
+				System.out.print("Water will be a liquid at sea level");
+			else 
+				System.out.print("Water will be a solid at sea level");
+			
+		}
+		else
+			System.out.print("You did not enter a valid unit for temperature value.");
+		
+		
+
 					
 	}
 
 }
+

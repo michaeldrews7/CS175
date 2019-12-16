@@ -55,7 +55,14 @@ public void deposit(double amount)
 */
 public void withdraw(double amount)
 {   
-	   balance = balance - amount;
+	if (balance < amount) {
+	   System.out.println("You don't have enough money in your account to withdraw. The " + amount + " is too great to be withdrawn from a balance of " + balance);
+		   
+	  }
+    else {
+       balance = balance - amount;
+       System.out.println("Happy Shopping. Your new balance is $" + balance);
+    } 
 }
 
 /**
